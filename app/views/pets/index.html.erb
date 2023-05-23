@@ -1,0 +1,11 @@
+<h1>Our lost pets... 😢</h1>
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <%= pet.name %> (<%= pet.species %>)
+      -
+      <%= link_to "Found!", pet_path(pet), data: { turbo_method: :delete, turbo_confirm: "Oh, you found this pet?" } %>
+    </li>
+  <% end %>
+</ul>
